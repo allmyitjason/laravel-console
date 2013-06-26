@@ -23,7 +23,7 @@ function formatVariables($variables = array(), $output = "")
     		$output .= " <span class='variabletype'>(".gettype($children).") [".count($children)."]</span>";
     		$output .= formatVariables($children);
     	} else {
-    		$output .= "<li><span class='variablekey'>$node</span> = ".$children.'</li>';
+    		$output .= "<li><span class='variablekey'>$node</span> = <span class='lit'>".$children.'</span></li>';
     	}
 
     	

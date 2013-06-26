@@ -107,8 +107,8 @@ code { font-family: Monaco, Menlo, "Andale Mono", "lucida console", "Courier New
 .tabs { display: none; overflow: auto; margin: 0; padding: 0; max-height: 40%; color: #fff; list-style: none; text-shadow: 1px 1px 0 #000; }
 .tabs .muted { color: #666; }
 
-.tabs .output { overflow: auto; margin: 0; padding: 1.4em; max-height: 40%; color: #fff; text-shadow: 1px 1px 0 #000; }
-.tabs .output .output_holder { margin: 0; }
+.tabs .output { overflow: auto; margin: 0; max-height: 40%; color: #fff; text-shadow: 1px 1px 0 #000; }
+.tabs .output .output_holder { margin: 0;padding:10px; }
 
 .tabs .queries { margin: 0; padding: 0; list-style: none; }
 .tabs .queries li { margin: 0; padding: 0; border-top: 1px solid rgba(255,255,255,.05); border-bottom: 1px solid rgba(0,0,0,.3); }
@@ -278,7 +278,21 @@ code { font-family: Monaco, Menlo, "Andale Mono", "lucida console", "Courier New
 
 .variables li {list-style: none;}
 .variables .variablenode {list-style-type:circle;}
+.variables .variablenode .variablekey {cursor:pointer;}
 .variabletype { font-style:italic; color:#db5a34;font-size:13px;}
+.output .span6.variables { background:#2e2e2e;float:right;width:30%;border: 1px solid #232323;border: 1px solid rgba(255, 255, 255, .05);}
+
+.output .span6 {
+	display:inline-block;
+	vertical-align: text-top;
+	background: #222;
+}
+
+.lit {
+color: #17CFB6;
+}
+
+
 
 
 /* ==========================================================================
