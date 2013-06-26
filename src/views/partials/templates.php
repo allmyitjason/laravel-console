@@ -3,7 +3,7 @@
 
 <script type="text/html" id="template_execution_diag">
 	<li class="button" data-toggle="output"><span class="title">Output:</span> <span class="time_queries">{{=output_size}}</span></li>
-	<li class="button last-of-type" data-toggle="queries" title="Number of queries / Execution time">
+	<li class="button" data-toggle="queries" title="Number of queries / Execution time">
 		<span class="title">SQL:</span>
 		{{ if (queries.length) { }}
 			<span class="time_queries">{{=queries.length}}<span class="divider">/</span>{{=time_queries}} ms</span>
@@ -11,6 +11,7 @@
 			<em>none</em>
 		{{ } }}
 	</li>
+	<li class="button last-of-type" data-toggle="variables" title="Variables">Variables</li>
 	<li class="execution help" title="Script execution / Laravel total">
 		<span class="title">Execution:</span> <span class="time">{{=time}} ms<span class="divider">/</span>{{=time_total}} ms</span>
 	</li>
@@ -76,6 +77,16 @@
 			{{ } }}
 		{{ } }}
 		</ul>
+	</li>
+
+	<li data-tab="variables" class="variables">
+		{{ if (typeof variables !== 'undefined' && variables) { }}
+			<pre class="output_holder">{{=variables}}</pre>
+		{{ } else if (typeof data !== 'undefined' && data) { }}
+			{{=data}}
+		{{ } else { }}
+			<span class="muted"><em>Code produced no output</em></span>
+		{{ } }}
 	</li>
 </script>
 

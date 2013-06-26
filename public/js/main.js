@@ -101,10 +101,12 @@ jQuery(function ($) {
 				if (res && res.output !== undefined) {
 					$execution_diag.html(tmpl('execution_diag', res));
 					$tabs.html(tmpl('output', res));
+					$(".variables .variablenode").find('ul').hide();
 					toggle(tabs.active, 1);
 				} else {
 					$execution_diag.html(tmpl('ended_unexpectedly'));
 					$tabs.html(tmpl('output', res));
+					$(".variables .variablenode").find('ul').hide();
 					toggle(tabs.initial, 1);
 				}
 			}).fail(function (res) {
@@ -201,6 +203,13 @@ jQuery(function ($) {
 
 		})[localStorage.remember == 1 ? 'addClass' : 'removeClass'](checked_class);
 	}
+
+
+	//$('.variables .variablenode li *').live('click', function(event) { event.stopPropagation() });
+
+	$(".variables .variablenode .variablekey").live('click',function() {
+			$(this).parent().children('ul').toggle();
+	});
 
 	// Initiate view reset
 	reset();

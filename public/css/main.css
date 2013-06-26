@@ -275,6 +275,12 @@ code { font-family: Monaco, Menlo, "Andale Mono", "lucida console", "Courier New
 .editor .CodeMirror .CodeMirror-gutter-text { padding: 1.4em .2em 1.4em 1.4em; }
 .code { min-height: 200px; }
 
+
+.variables li {list-style: none;}
+.variables .variablenode {list-style-type:circle;}
+.variabletype { font-style:italic; color:#db5a34;font-size:13px;}
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */

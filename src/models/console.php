@@ -15,6 +15,14 @@ class Console
 		eval($code);
 		$console_render_end = microtime(true);
 		$output = ob_get_clean();
+		$variables = get_defined_vars();
+
+		unset($variables['code']);
+		unset($variables['output']);
+		unset($variables['console_render_start']);
+		unset($variables['console_render_end']);
+
+		$variables = formatVariables($variables, "");
 
 		// Total execution time by queries
 		$time_queries = 0;
@@ -32,6 +40,7 @@ class Console
 			'time_total'   => number_format((microtime(true) - LARAVEL_START) * 1000, 2),
 			'output'       => $output,
 			'output_size'  => nice_bytesize(strlen($output)),
+			'variables'    => $variables
 		);
 
 		return static::$profile;
