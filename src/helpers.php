@@ -19,8 +19,7 @@ function formatVariables($variables = array(), $output = "")
     foreach($variables as $node=>$children) {
 
     	if (is_array($children) || is_object($children)) {
-    		$output.= "<li class='variablenode'>"."<span class='variablekey'>".$node."</span>";
-    		$output .= " <span class='variabletype'>(".gettype($children).") [".count($children)."]</span>";
+    		$output.= "<li class='variablenode'>"."<span class='variablekey'>".$node." <span class='variabletype'>(".gettype($children).") [".count($children)."]</span>"."</span>";
     		$output .= formatVariables($children);
     	} else {
     		$output .= "<li><span class='variablekey'>$node</span> = <span class='lit'>".$children.'</span></li>';
