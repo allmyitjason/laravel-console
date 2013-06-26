@@ -280,7 +280,7 @@ code { font-family: Monaco, Menlo, "Andale Mono", "lucida console", "Courier New
 .variables .variablenode {list-style-type:circle;}
 .variables .variablenode .variablekey {cursor:pointer;white-space: nowrap;}
 .variabletype { font-style:italic; color:#db5a34;font-size:13px;white-space: nowrap;}
-.output .span6.variables { background:#2e2e2e;float:right;width:30%;border: 1px solid #232323;border: 1px solid rgba(255, 255, 255, .05);overflow-x: auto;white-space: nowrap;}
+.output .span6.variables { background:#2e2e2e;float:right;width:30%;border-left: 1px solid rgba(255, 255, 255, .05);overflow-x: auto;white-space: nowrap;}
 
 .output .span6 {
 	display:inline-block;
