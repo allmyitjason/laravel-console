@@ -101,14 +101,14 @@ jQuery(function ($) {
 				if (res && res.output !== undefined) {
 					$execution_diag.html(tmpl('execution_diag', res));
 					$tabs.html(tmpl('output', res));
-					$(".variables .variablenode").find('ul').hide();
 					toggle(tabs.active, 1);
 				} else {
 					$execution_diag.html(tmpl('ended_unexpectedly'));
 					$tabs.html(tmpl('output', res));
-					$(".variables .variablenode").find('ul').hide();
 					toggle(tabs.initial, 1);
 				}
+				$(".variables .variablenode").find('ul').hide();
+				
 			}).fail(function (res) {
 				console.log('fail response:', res);
 				$execution_diag.html(tmpl('request_error', res));
@@ -128,6 +128,7 @@ jQuery(function ($) {
 			tabs.active = newTab;
 
 			resize();
+
 		},
 		reset = function () {
 			$tabs.hide().html('');
@@ -209,6 +210,7 @@ jQuery(function ($) {
 
 	$(".variables .variablenode .variablekey").live('click',function() {
 			$(this).parent().children('ul').toggle();
+			resize();
 	});
 
 	// Initiate view reset
